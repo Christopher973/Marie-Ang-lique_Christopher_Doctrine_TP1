@@ -1,0 +1,11 @@
+{
+    "require": {
+        "doctrine/orm": "*",
+        "doctrine/dbal": "*",
+        "doctrine/annotations": "*",
+        "symfony/cache": "*"
+    },
+    "autoload": {
+        "psr-4": {"": "src/"}
+    }
+}
