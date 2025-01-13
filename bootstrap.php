@@ -1,19 +1,25 @@
 <?php
-require_once join(DIRECTORY_SEPARATOR, [__DIR__, 'vendor', 'autoload.php']);
+// bootstrap.php
 use Doctrine\ORM\ORMSetup;
 use Doctrine\ORM\EntityManager;
-$entitiesPath = [join(DIRECTORY_SEPARATOR, [__DIR__, "src", "Entity"])];
+
+// require_once "vendor/autoload.php";
+
+// Create a simple "default" Doctrine ORM configuration for Annotations
 $isDevMode = true;
 $proxyDir = null;
 $cache = null;
 $useSimpleAnnotationReader = false;
-// Connexion à la base de données
-$dbParams = [
-    'driver' => 'pdo_mysql','host' => '173.30.0.1', 'port' => '3337', 'charset' => 'utf8',
-    'user' => 'doctrine', 'password' => 'doctrine', 'dbname' => 'db_doctrine',
-];
-$config = ORMSetup::createAnnotationMetadataConfiguration(
-    $entitiesPath,$isDevMode,$proxyDir, $cache,$useSimpleAnnotationReader
+$config = ORMSetup::createAnnotationMetadataConfiguration(array(__DIR__."/src/Entity"), $isDevMode, $proxyDir, $cache, $useSimpleAnnotationReader);
+
+// database configuration parameters
+$conn = array(
+    'driver' => 'pdo_mysql',
+    'host' => 'localhost',
+    'dbname' => 'db_doctrine',
+    'user' => 'root',
+    'password' => ''
 );
-$entityManager = EntityManager::create($dbParams, $config);
-return $entityManager;
+
+// obtaining the entity manager
+$entityManager = EntityManager::create($conn, $config);
