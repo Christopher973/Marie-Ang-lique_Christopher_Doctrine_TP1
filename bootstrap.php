@@ -21,5 +21,12 @@ $conn = array(
     'password' => ''
 );
 
+// Configuration de l'autoloader pour les namespaces Dao et Repository
+$config->setAutoloadNamespaces([
+    'Entity' => __DIR__ . '/src/Entity',
+    'Dao' => __DIR__ . '/src/Dao',
+    'Repository' => __DIR__ . '/src/Repository',
+]);
+
 // obtaining the entity manager
 $entityManager = EntityManager::create($conn, $config);

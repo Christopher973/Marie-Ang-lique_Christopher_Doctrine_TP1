@@ -10,4 +10,8 @@ namespace Repository;
  */
 class PostRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getAllPostsOrderedByTitle()
+    {
+        return $this->postDao->findAllPostsOrderedByTitle();
+    }
 }
