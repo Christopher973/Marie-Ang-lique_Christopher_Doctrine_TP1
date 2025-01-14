@@ -3,7 +3,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass=Repository\ClubRepository::class)
  * @ORM\Table(name="t_club")
  */
 class Club

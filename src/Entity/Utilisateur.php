@@ -4,6 +4,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass=Repository\UtilisateurRepository::class)
  * @ORM\Table(name="t_utilisateur")
  */
 class Utilisateur

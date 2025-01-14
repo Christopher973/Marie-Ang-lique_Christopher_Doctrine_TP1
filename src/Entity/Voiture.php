@@ -2,7 +2,7 @@
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass=Repository\VoitureRepository::class)
  * @ORM\Table(name="t_voiture")
  */
 class Voiture

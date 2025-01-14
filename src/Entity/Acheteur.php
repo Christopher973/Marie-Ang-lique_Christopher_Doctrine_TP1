@@ -2,7 +2,7 @@
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass=Repository\AcheteurRepository::class)
  * @ORM\Table(name="t_acheteur")
  */
 class Acheteur
