@@ -3,7 +3,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Entity(repositoryClass="src\Repository\IndividuRepository")
+ * @ORM\Entity(repositoryClass=Repository\IndividuRepository::class)
  * @ORM\Table(name="t_individu")
  */
 class Individu
